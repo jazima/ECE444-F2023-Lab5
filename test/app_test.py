@@ -1,4 +1,3 @@
-import os
 import pytest
 import json
 from pathlib import Path
@@ -76,6 +75,7 @@ def test_messages(client):
     assert b"&lt;Hello&gt;" in rv.data
     assert b"<strong>HTML</strong> allowed here" in rv.data
 
+
 def test_delete_message(client):
     """Ensure the messages are being deleted"""
     rv = client.get("/delete/1")
@@ -85,6 +85,7 @@ def test_delete_message(client):
     rv = client.get("/delete/1")
     data = json.loads(rv.data)
     assert data["status"] == 1
+
 
 def test_search(client):
     """Ensure that user can post messages"""
@@ -98,8 +99,8 @@ def test_search(client):
 
     assert b"Hello" in rv.data
 
+
 def test_login_required(client):
     """Ensure the messages are being deleted"""
     rv = client.get("/delete/1")
-    data = json.loads(rv.data)
     assert b"Please log in." in rv.data
