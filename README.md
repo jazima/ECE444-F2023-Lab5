@@ -1,5 +1,9 @@
 # Flaskr TDD
 
+# Unit tests for team project
+Please see unit tests implemented at the following link:
+https://github.com/ECE444-2023Fall/project-1-web-application-design-group2-t3/blob/tests/flask-api/app_test.py/#L36-L44
+
 # Pros and Cons of TDD
 Test-driven development (TDD) is a software development process in which the developer first write the tests for for some function, and then works on writing the code for that function in order to pass the defined test. The idea is that in writing the test, the developer lays out the requirements for the function and in doing so is better able to understand what the function needs to do. It also ensures that the code written is verified based on the requirements of the test.
 
