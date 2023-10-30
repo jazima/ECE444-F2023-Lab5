@@ -97,3 +97,9 @@ def test_search(client):
     rv = client.get("/search/?query=Hello")
 
     assert b"Hello" in rv.data
+
+def test_login_required(client):
+    """Ensure the messages are being deleted"""
+    rv = client.get("/delete/1")
+    data = json.loads(rv.data)
+    assert b"Please log in." in rv.data
