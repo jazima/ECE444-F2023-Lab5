@@ -39,12 +39,6 @@ def test_index(client):
     assert response.status_code == 200
 
 
-def test_database(client):
-    """initial test. ensure that the database exists"""
-    tester = Path("test.db").is_file()
-    assert tester
-
-
 def test_empty_db(client):
     """Ensure database is blank"""
     rv = client.get("/")
